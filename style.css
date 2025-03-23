@@ -1,0 +1,97 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: pink;
+    margin: 0;
+}
+
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+#films {
+    width: 25%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+#films li {
+    list-style-type: none;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#films li:hover {
+    background-color: #ddd;
+}
+
+
+.movie-details {
+    width: 70%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#poster {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+    display: block;
+}
+
+
+.movie-info {
+    padding: 10px 0;
+}
+
+#available-tickets {
+    font-weight: bold;
+}
+
+
+#buy-ticket {
+    display: block;
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#buy-ticket:hover {
+    background-color: darkorange;
+}
+
+#buy-ticket:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+
+.sold-out {
+    text-decoration: line-through;
+    color: red;
+}
