@@ -39,10 +39,39 @@ document.addEventListener ('DOMContentLoaded', ()=> {
 
                 movieList.appendChild(li)
             })
-    );
-        })
+    });
+        // })
+
+    }
+    function buyTicket (movie, availableTickets) {
+        if (availableTickets > 0){
+            let updatedTicketsSold = movie.tickets_sold + 1
+            fetch (`http://localhost:3000/films/${movie.id}` , {
+                method : 'PATCH',
+                headers : {
+                    'Content-Type': "application/json"
+                },
+                body: JSON.stringify({tickets_sold:updatedTicketsSold})
+
+            })
+            .then(response => response.json)
+            .then (updatedMovie => {
+                let newAvailableTickets = movie.capacity-updatedMovie.tickets_sold
+                document.getElementById('available-tickets').textContent=newAvailableTickets
+                if (newAvailableTickets === 0) {
+                    buyTicketsBtn.textContent = 'Tickets are sold out!'
+                    buyTicketsBtn.disabled =true
+                }
+
+            })
+
+        }
 
     }
 
+    loadFirstMovie()
+    loadAllMovies()
+
 
 })
+
