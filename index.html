@@ -7,20 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id = 'movie-ticket-container'>
-
-        <div id = 'movie-details'>
-            <img id = 'poster' src="" alt="">
-            <h2 id="movie-title "></h2>
-            <p>Runtime <span id="runtime"></span>minutes</p>
-            <p>Available tickets <span id="available-tickets"></span></p>
-            <button id="buy-ticket">Buy Ticket</button>
-
+    <div id='movie-ticket-container'>
+        <div id='movie-details'>
+            <img id='poster' src="" alt="">
+            <h2 id="title"></h2>
+            <p id="description"></p>
         </div>
-        <ul id="films">
-
-        </ul>
-
+        <div id="ticket-info">
+            <p>Runtime: <span id="runtime"></span> minutes</p>
+            <p>Showtime: <span id="showtime"></span></p>
+            <p>Available tickets: <span id="available-tickets"></span></p>
+            <button id="buy-ticket">Buy Ticket</button>
+        </div>
+        <ul id="films"></ul>
     </div>
   <script src = 'index.js'></script>  
 </body>

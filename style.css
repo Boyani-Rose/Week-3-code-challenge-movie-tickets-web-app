@@ -1,73 +1,87 @@
-
 body {
     font-family: Arial, sans-serif;
-    background-color: pink;
+    background-color: #f5f5f5;
     margin: 0;
 }
-
 
 header {
     background-color: #333;
     color: white;
-    padding: 10px;
-    text-align: left;
+    padding: 15px;
     font-size: 24px;
     font-weight: bold;
-}
-
-
-.container {
     display: flex;
-    gap: 20px;
-    padding: 20px;
+    align-items: center;
 }
 
+#movie-ticket-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 30px;
+}
 
+/* Movie list (left side) */
 #films {
     width: 25%;
     background-color: white;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
 }
 
 #films li {
-    list-style-type: none;
-    padding: 8px;
+    padding: 10px;
     border-bottom: 1px solid #ccc;
     cursor: pointer;
+    font-size: 16px;
 }
 
 #films li:hover {
     background-color: #ddd;
 }
 
-
-.movie-details {
-    width: 70%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+/* Movie details (center) */
+#movie-details {
+    width: 35%;
+    text-align: center;
 }
-
 
 #poster {
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
     border-radius: 5px;
     display: block;
+    margin: 0 auto;
 }
 
+/* Ticket details (right side) */
+#ticket-info {
+    width: 20%;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
-.movie-info {
-    padding: 10px 0;
+#ticket-info h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#ticket-info p {
+    font-size: 14px;
+    color: #666;
 }
 
 #available-tickets {
     font-weight: bold;
+    display: block;
+    margin-top: 5px;
 }
-
 
 #buy-ticket {
     display: block;
@@ -79,6 +93,7 @@ header {
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
+    width: 100%;
 }
 
 #buy-ticket:hover {
@@ -88,10 +103,4 @@ header {
 #buy-ticket:disabled {
     background-color: gray;
     cursor: not-allowed;
-}
-
-
-.sold-out {
-    text-decoration: line-through;
-    color: red;
 }
