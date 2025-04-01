@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const buyTicketsBtn = document.getElementById('buy-ticket');
 
     function loadFirstMovie() {
-        fetch("http://localhost:3000/films/1")
+        fetch("http://my-json-server.typicode.com/Boyani-Rose/films/1")
             .then((response) => response.json())
             .then(movie => displayMovieDetails(movie));
     }
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loadAllMovies() {
-        fetch("http://localhost:3000/films")
+        fetch("http://my-json-server.typicode.com/Boyani-Rose/films")
             .then((response) => response.json())
             .then(movies => {
                 movieList.innerHTML = '';
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         li.style.textDecoration = "line-through";
                     }
 
-                    li.onclick = () => fetch(`http://localhost:3000/films/${movie.id}`)
+                    li.onclick = () => fetch(`http://my-json-server.typicode.com/Boyani-Rose/films${movie.id}`)
                         .then(response => response.json())
                         .then(displayMovieDetails);
 
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (availableTickets > 0) {
             let updatedTicketsSold = movie.tickets_sold + 1;
-            fetch(`http://localhost:3000/films/${movie.id}`, {
+            fetch(`http://my-json-server.typicode.com/Boyani-Rose/films/${movie.id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': "application/json"
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         markSoldOut(movie.id);
                     }
 
-                    return fetch("http://localhost:3000/tickets", {
+                    return fetch("http://my-json-server.typicode.com/Boyani-Rose/films", {
                         method: "POST",
                         headers: { 'Content-Type': "application/json" },
                         body: JSON.stringify({ film_id: movie.id, number_of_tickets: 1 })
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function deleteMovie(movieId, liElement) {
-        fetch(`http://localhost:3000/films/${movieId}`, { method: 'DELETE' })
+        fetch(`http://my-json-server.typicode.com/Boyani-Rose/films${movieId}`, { method: 'DELETE' })
             .then(() => {
                 liElement.remove();
             });
